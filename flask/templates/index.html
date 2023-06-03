@@ -1,24 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css" />
     <title>Summarize</title>
-</head>
-<body>
-<h1>Summarize</h1>
-	<label for="input">Paste your text here:</label><br>
-	<textarea id="input" rows="10" cols="50"></textarea><br>
-	<button id="summarize">Summarize</button><br>
-	<label for="output">Summarized text:</label><br>
-	<textarea id="output" rows="10" cols="50" readonly></textarea><br>
-	<script src="summarizer.js"></script>
-  <h1>Image Converter</h1>
-  <form id="uploadForm">
-    <input type="file" id="imageInput" accept="image/*">
-    <button type="submit">Convert</button>
-  </form>
-  <div id="preview"></div>
-	<script src="script.js"></script>
-</body>
+  </head>
+  <body>
+    <h1>Summarize</h1>
+    <label for="input">Paste your text here:</label><br />
+    <textarea id="input" rows="10" cols="50"></textarea><br />
+    <button id="summarize">Summarize</button><br />
+    <label for="output">Summarized text:</label><br />
+    <textarea id="output" rows="10" cols="50" readonly></textarea><br />
+    <script src="summarizer.js"></script>
+    <h1>Image Converter</h1>
+    <form id="uploadForm">
+      <input type="file" id="imageInput" accept="image/*" action="" />
+      <button type="submit">Convert</button>
+    </form>
+    <div id="preview"></div>
+    <form
+      id="uploadForm"
+      action="/convert"
+      method="post"
+      enctype="multipart/form-data"
+    >
+      <input type="file" id="imageInput" name="image" accept="image/*" />
+      <button type="submit">Upload</button>
+    </form>
+
+    <script src="script.js"></script>
+  </body>
 </html>
